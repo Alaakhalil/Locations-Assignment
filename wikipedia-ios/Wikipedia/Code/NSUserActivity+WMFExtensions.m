@@ -1,11 +1,11 @@
 #import <WMF/NSUserActivity+WMFExtensions.h>
 #import <WMF/WMF-Swift.h>
+#import <MapKit/MapKit.h>
 
 @import CoreSpotlight;
 @import MobileCoreServices;
 
 NSString *const WMFNavigateToActivityNotification = @"WMFNavigateToActivityNotification";
-
 // Use to suppress "User-facing text should use localized string macro" Analyzer warning
 // where appropriate.
 __attribute__((annotate("returns_localized_nsstring"))) static inline NSString *wmf_localizationNotNeeded(NSString *s) {
@@ -61,6 +61,17 @@ __attribute__((annotate("returns_localized_nsstring"))) static inline NSString *
 
 + (instancetype)wmf_placesActivityWithURL:(NSURL *)activityURL {
     NSURLComponents *components = [NSURLComponents componentsWithURL:activityURL resolvingAgainstBaseURL:NO];
+    NSArray<NSURLQueryItem *> *queryItems = components.queryItems;
+    NSUserActivity *activity = [self wmf_pageActivityWithName:@"Places"];
+        if ([components.path isEqualToString:@"/location"] && queryItems != nil ) {
+            return [self AddLocationInfoToActivity:components.queryItems :activity];
+        } else {
+            return [self AddArticleUrlToActivity:components :activity];
+        }
+}
+
+#pragma mark Original function in Wikepedia, Add articleURL to activity
++ (instancetype)AddArticleUrlToActivity:(NSURLComponents *)components :(NSUserActivity *)activity {
     NSURL *articleURL = nil;
     for (NSURLQueryItem *item in components.queryItems) {
         if ([item.name isEqualToString:@"WMFArticleURL"]) {
@@ -69,8 +80,35 @@ __attribute__((annotate("returns_localized_nsstring"))) static inline NSString *
             break;
         }
     }
-    NSUserActivity *activity = [self wmf_pageActivityWithName:@"Places"];
     activity.webpageURL = articleURL;
+    return activity;
+}
+#pragma mark Add location`s Information to activity
+
++ (instancetype)AddLocationInfoToActivity:(NSArray<NSURLQueryItem *> *)queryItems :(NSUserActivity *)activity {
+    NSString *name = nil;
+    NSString *latitudeString = nil;
+    NSString *longitudeString = nil;
+    // Parsing queryItems
+    for (NSURLQueryItem *item in queryItems) {
+        if ([item.name isEqualToString: @"name"]) {
+            name = item.value;
+        } else if ([item.name isEqualToString:@"latitude"]) {
+            latitudeString = item.value;
+        } else if ([item.name isEqualToString:@"longitude"]) {
+            longitudeString = item.value;
+        }
+    }
+    
+    // Adding mapItem to activity
+    if (latitudeString != nil && longitudeString != nil) {
+           double latitude = [latitudeString doubleValue];
+           double longitude = [longitudeString doubleValue];
+           CLLocationCoordinate2D coords = CLLocationCoordinate2DMake(latitude, longitude);
+           MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:coords];
+           MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+           activity.mapItem = mapItem;
+       }
     return activity;
 }
 

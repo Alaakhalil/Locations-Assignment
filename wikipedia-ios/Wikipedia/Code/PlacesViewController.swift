@@ -2418,7 +2418,6 @@ class PlaceSearchEmptySearchOverlayView: UIView {
     
     @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
-    
 }
 
 // MARK: - UIViewControllerPreviewingDelegate
@@ -2452,5 +2451,15 @@ extension PlacesViewController {
                 return false
             }
         }
+    }
+}
+
+//Mark: - Show selected location from locations App
+extension PlacesViewController {
+    @objc public func showSelectedLocation(mapItem: MKMapItem, title: String) {
+        guard let location = mapItem.placemark.location else {
+            return
+        }
+        zoomAndPanMapView(toLocation: location)
     }
 }
