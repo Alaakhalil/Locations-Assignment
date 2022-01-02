@@ -10,7 +10,6 @@ import Alamofire
 
 class ServerManger {
     static let shared = ServerManger()
-    
     func getHouses(completion: @escaping (_ response: LocationModel, _ error: String?) -> Void)-> Void{
         AF.request(locationsUrl, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: nil).validate(statusCode: 199..<300).responseDecodable { (response: DataResponse<LocationModel, AFError>) in
             switch response.result{
@@ -29,7 +28,6 @@ extension JSONDecoder {
             print(response.error!)
             return .failure(response.error!)
         }
-        
         guard let responseData = response.data else {
             print("Didn't get any data from API")
             return .failure(response.error!)
