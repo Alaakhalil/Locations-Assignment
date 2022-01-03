@@ -93,7 +93,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="sBD-Jc-AJj">
                                 <rect key="frame" x="62" y="192" width="290" height="208"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5iX-ay-u2Z">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5iX-ay-u2Z">
                                         <rect key="frame" x="0.0" y="0.0" width="290" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="bxC-Rq-uyz"/>
@@ -110,7 +110,7 @@
                                             <constraint firstAttribute="height" constant="50" id="2kT-Kn-55w"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Longitude" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j3R-Lk-eKG">
                                         <rect key="frame" x="0.0" y="158" width="290" height="50"/>

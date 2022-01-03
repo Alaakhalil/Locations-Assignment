@@ -11,7 +11,6 @@
 		61465C1027821C6C00026144 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61465C0F27821C6C00026144 /* Utils.swift */; };
 		61898C792774AEED0039E86B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61898C782774AEED0039E86B /* AppDelegate.swift */; };
 		61898C7B2774AEED0039E86B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61898C7A2774AEED0039E86B /* SceneDelegate.swift */; };
-		61898C7D2774AEED0039E86B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61898C7C2774AEED0039E86B /* ViewController.swift */; };
 		61898C802774AEED0039E86B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61898C7E2774AEED0039E86B /* Main.storyboard */; };
 		61898C822774AEF10039E86B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61898C812774AEF10039E86B /* Assets.xcassets */; };
 		61898C852774AEF10039E86B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61898C832774AEF10039E86B /* LaunchScreen.storyboard */; };
@@ -23,6 +22,7 @@
 		61D75750277DF70B0030EB7E /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D7574F277DF70B0030EB7E /* AddLocationViewController.swift */; };
 		61D75755277DF7A40030EB7E /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D75754277DF7A40030EB7E /* LocationModel.swift */; };
 		61D75757277DF98C0030EB7E /* ServerManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D75756277DF98C0030EB7E /* ServerManger.swift */; };
+		61F0E86727838DE20019E6CB /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61F0E86627838DE20019E6CB /* Alert.swift */; };
 		702F2FBD34D6C80D6ABD5988 /* Pods_LocationsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1146295D19BB4B1515212407 /* Pods_LocationsTests.framework */; };
 		F70AA3AAE9FC7CB4809BCD16 /* Pods_Locations_LocationsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450E34BC67A6F9E211342FB4 /* Pods_Locations_LocationsUITests.framework */; };
 		FFF4FE1C52D9B8D056B2D554 /* Pods_Locations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34F3090239672C3DC3566142 /* Pods_Locations.framework */; };
@@ -55,7 +55,6 @@
 		61898C752774AEED0039E86B /* Locations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Locations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61898C782774AEED0039E86B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61898C7A2774AEED0039E86B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		61898C7C2774AEED0039E86B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		61898C7F2774AEED0039E86B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		61898C812774AEF10039E86B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		61898C842774AEF10039E86B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,6 +69,7 @@
 		61D7574F277DF70B0030EB7E /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
 		61D75754277DF7A40030EB7E /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		61D75756277DF98C0030EB7E /* ServerManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerManger.swift; sourceTree = "<group>"; };
+		61F0E86627838DE20019E6CB /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		C753F22000FC34CE5170E27B /* Pods-Locations-LocationsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Locations-LocationsUITests.debug.xcconfig"; path = "Target Support Files/Pods-Locations-LocationsUITests/Pods-Locations-LocationsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D5BA8FF21B596BD4F6A8F572 /* Pods-Locations.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Locations.release.xcconfig"; path = "Target Support Files/Pods-Locations/Pods-Locations.release.xcconfig"; sourceTree = "<group>"; };
 		E0BF4CDE04BAA45A29EA83E2 /* Pods-Locations-LocationsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Locations-LocationsUITests.release.xcconfig"; path = "Target Support Files/Pods-Locations-LocationsUITests/Pods-Locations-LocationsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -110,6 +110,7 @@
 			children = (
 				61465C0D277F769800026144 /* Constants.swift */,
 				61465C0F27821C6C00026144 /* Utils.swift */,
+				61F0E86627838DE20019E6CB /* Alert.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -147,7 +148,6 @@
 				61898CA82774AF4A0039E86B /* Views */,
 				61898C782774AEED0039E86B /* AppDelegate.swift */,
 				61898C7A2774AEED0039E86B /* SceneDelegate.swift */,
-				61898C7C2774AEED0039E86B /* ViewController.swift */,
 				61898C812774AEF10039E86B /* Assets.xcassets */,
 				61898C862774AEF10039E86B /* Info.plist */,
 			);
@@ -475,7 +475,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61898C7D2774AEED0039E86B /* ViewController.swift in Sources */,
 				61D75750277DF70B0030EB7E /* AddLocationViewController.swift in Sources */,
 				61898CB12774BD790039E86B /* LocationsCell.swift in Sources */,
 				61898C792774AEED0039E86B /* AppDelegate.swift in Sources */,
@@ -484,6 +483,7 @@
 				61D75755277DF7A40030EB7E /* LocationModel.swift in Sources */,
 				61D75757277DF98C0030EB7E /* ServerManger.swift in Sources */,
 				61898CAE2774BAB90039E86B /* LocationsViewController.swift in Sources */,
+				61F0E86727838DE20019E6CB /* Alert.swift in Sources */,
 				61465C0E277F769800026144 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
