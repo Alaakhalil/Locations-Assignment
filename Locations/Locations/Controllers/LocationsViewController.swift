@@ -39,7 +39,7 @@ extension LocationsViewController: UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        OpenWikipedia(location: self.locations[indexPath.row])
+        OpenWikipedia(location: self.locations[indexPath.row], controller: self)
     }
 }
 

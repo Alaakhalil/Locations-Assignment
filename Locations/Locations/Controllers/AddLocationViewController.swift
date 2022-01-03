@@ -20,34 +20,18 @@ class AddLocationViewController: UIViewController {
     }
     @IBAction func AddLocationPressedButton(_ sender: Any) {
         if let error = validationInput(){
-            self.alertMassage()
+            Alert.instance.alertMassage(message: "Please enter latitude & longitude", controller: self)
             print(error)
         }
         else{
             guard let lat = Double(latitudeTextField.text!),let long = Double(longitudeTextField.text!)
             else{
-                print("There is an error in data")
-                alertMassage()
+                Alert.instance.alertMassage(message: "Please enter latitude & longitude", controller: self)
                 return
             }
             self.location = Location(name: locationNameTextField.text ?? "", lat: lat, long: long)
-            OpenWikipedia(location: location!)
-            self.dismiss(animated: true, completion: nil)
+            OpenWikipedia(location: location!, controller: self)
         }
-    }
-    func alertMassage(){
-        let alert = UIAlertController(title: "Error", message: "Please enter latitude & longitude", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            switch action.style{
-            case .default:
-                print("default")
-            case .cancel:
-                print("cancel")
-            case .destructive:
-                print("destructive")
-            }
-        }))
-        self.present(alert, animated: true, completion: nil)
     }
     
     func validationInput() -> String?{
@@ -57,7 +41,6 @@ class AddLocationViewController: UIViewController {
         return nil
     }
     
-    // Dismiss the keyboard by touching anywhere on the screen
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
